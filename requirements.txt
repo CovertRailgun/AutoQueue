@@ -1,3 +1,5 @@
-disnake==2.7.0
-rich==13.1.0
-python-dotenv==0.21.0
+disnake[speed] == 2.7.0
+rich[logging] == 13.2.0
+python-dotenv == 0.21.1
+uvloop==0.17.0; sys_platform == "linux"
+git+https://github.com/DisnakeCommunity/disnake-ext-components
