@@ -17,7 +17,6 @@ from rich.logging import RichHandler
 
 with suppress(ImportError):
     from uvloop import install
-
     install()
 
 
