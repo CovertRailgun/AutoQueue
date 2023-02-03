@@ -1,5 +1,4 @@
 from asyncio import Queue, create_task
-from io import BytesIO
 from logging import getLogger
 
 import disnake

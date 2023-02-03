@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 import json
+import re
 from asyncio import Queue, sleep
 from binascii import unhexlify
 from contextlib import suppress
 from io import BytesIO
 from logging import basicConfig, getLogger
 from os import environ
-from re import compile
 
 import disnake
 from aiosbb import SBBClient
@@ -34,14 +34,13 @@ def main():
     log = getLogger("rich")
     load_dotenv()
 
-    wait_pattern = compile(r"^W(\d*)$")
+    wait_pattern = re.compile(r"^W(\d*)$")
 
     class SbbConnection(SBBClient):
         def __init__(self, ip):
             self.overworldPointer = ("0x43A7848", "0x348", "0x10", "0xD8", "0x28")
             self.isConnectedPointer = ("0x437E280", "0x30")
             super().__init__(ip, timeout=10.0, verbose=True)
-
 
         async def send_seq(self, command: str) -> None:
             _, args_str = command.split(" ")
