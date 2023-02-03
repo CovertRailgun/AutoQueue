@@ -40,10 +40,9 @@ def main():
 
     class SbbConnection(SBBClient):
         def __init__(self, ip):
-            timeout: float = 10.0
             self.overworldPointer = ["0x43A7848", "0x348", "0x10", "0xD8", "0x28"]
             self.isConnectedPointer = ["0x437E280", "0x30"]
-            super().__init__(ip)
+            super().__init__(ip, timeout = 10.0)
 
         async def send_seq(self, command: str) -> None:
             _, args_str = command.split(" ")
