@@ -42,6 +42,7 @@ def main():
             self.isConnectedPointer = ("0x437E280", "0x30")
             super().__init__(ip, timeout=10.0, verbose=True)
 
+
         async def send_seq(self, command: str) -> None:
             _, args_str = command.split(" ")
             cmds = args_str.split(",")
