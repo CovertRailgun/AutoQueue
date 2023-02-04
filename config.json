@@ -1,4 +1,8 @@
 {
-    "servers": [],
-    "IP" : ""
+    "IP" : "",
+    "offline_mode": false,
+    "log_level": "INFO",
+    "emojis": {
+        "star": ":star:"
+    }
 }
